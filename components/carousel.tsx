@@ -60,15 +60,6 @@ export function PriorityFeed({ posts, intervalMs = 5000 }: PriorityFeedProps) {
           100% { opacity: 1; transform: translateY(0) scale(1); }
         }
       `}</style>
-
-      <div className="flex justify-between items-center text-[10px] tracking-[0.3em] uppercase font-bold">
-        <div className="text-[#ff0000]">
-          [ Priority_Feed ]
-        </div>
-        <div className={`transition-opacity duration-300 text-white/40 ${isHovered ? 'opacity-100' : 'opacity-0'}`}>
-          [ sys_paused ]
-        </div>
-      </div>
       
       <div 
         className="relative border border-white/10 bg-black/50 overflow-hidden group"

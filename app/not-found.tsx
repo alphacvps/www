@@ -1,10 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
-import { Crosshair } from '@/components/crosshair';
-import { MousePosition } from '@/types/landing';
-import TacticalButton from '@/components/button';
+import Button from '@/components/button';
 
 export default function NotFound() {
   return (
@@ -27,11 +23,11 @@ export default function NotFound() {
         </p>
 
         <div className="pt-2">
-          <TacticalButton
+          <Button
             href="/"
           >
             &gt; re_route_to_base
-          </TacticalButton>
+          </Button>
         </div>
       </div>
     </div>
