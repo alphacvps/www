@@ -32,10 +32,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-[#060606] text-[#e0e0e0]">
-        <CookieBanner />
-        <Header />
         {children}
-        <Footer />
         </body>
     </html>
   );
