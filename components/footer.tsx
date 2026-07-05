@@ -108,7 +108,7 @@ const Footer = () => {
   return (
     <footer
       ref={containerRef}
-      className="relative w-full h-screen overflow-hidden font-sans select-none"
+      className="relative w-full h-dvh overflow-hidden font-sans select-none"
       style={{ backgroundColor: CONFIG.colors.base }}
     >
       <div

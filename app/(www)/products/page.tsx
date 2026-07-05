@@ -37,7 +37,7 @@ export default function ProductsPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#050505] text-[#e0e0e0] font-mono selection:bg-[#ff0000]/30 selection:text-white pb-16 mt-20">
+    <div className="min-h-dvh bg-[#050505] text-[#e0e0e0] font-mono selection:bg-[#ff0000]/30 selection:text-white pb-16 mt-20">
       <main className="max-w-7xl mx-auto px-6 pt-12 md:pt-16">
         <section className="mb-16 flex flex-col items-center justify-center gap-6 text-center">
           <h1 className="text-sm md:text-base font-mono font-medium tracking-[0.3em] text-white/80 uppercase">

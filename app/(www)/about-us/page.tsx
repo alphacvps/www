@@ -4,7 +4,7 @@ import React from "react";
 
 const AboutTactical: React.FC = () => {
   return (
-    <main className="min-h-screen bg-[#060606] font-mono selection:bg-red-600 selection:text-white p-6 md:p-12 lg:p-20">
+    <main className="min-h-dvh bg-[#060606] font-mono selection:bg-red-600 selection:text-white p-6 md:p-12 lg:p-20">
       <div className="max-w-4xl mx-auto">
         <header className="mb-24">
           <h1 className="text-5xl md:text-7xl font-black uppercase tracking-tighter leading-none mb-4">

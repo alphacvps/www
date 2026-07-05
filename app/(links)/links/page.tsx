@@ -40,7 +40,7 @@ const LINKS_DATA: LinkItem[] = [
 
 export default function LinksPage() {
   return (
-    <div className="min-h-screen bg-[#050505] text-[#e0e0e0] font-mono selection:bg-[#ff0000]/30 selection:text-white flex flex-col items-center py-10 sm:py-20 px-4 sm:px-6 relative overflow-x-hidden">
+    <div className="min-h-dvh bg-[#050505] text-[#e0e0e0] font-mono selection:bg-[#ff0000]/30 selection:text-white flex flex-col items-center py-10 sm:py-20 px-4 sm:px-6 relative overflow-x-hidden">
       
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,var(--tw-gradient-stops))] from-white/5 via-transparent to-transparent pointer-events-none" />
 

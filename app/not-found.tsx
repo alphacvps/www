@@ -5,7 +5,7 @@ import Button from '@/components/button';
 export default function NotFound() {
   return (
     <div 
-      className="relative w-full h-screen bg-[#050505] text-[#e0e0e0] font-mono overflow-hidden flex justify-between items-center p-8 select-none"
+      className="relative w-full h-dvh bg-[#050505] text-[#e0e0e0] font-mono overflow-hidden flex justify-between items-center p-8 select-none"
     >
       <div className="max-w-md md:ml-12 space-y-6 z-10">
         <div className="space-y-1">

@@ -19,7 +19,7 @@ export default function Home() {
   return (
     <div className="relative w-full font-sans overflow-x-hidden">
       <section
-        className="relative h-screen w-full flex flex-col justify-center px-12 transition-all duration-500 overflow-hidden"
+        className="relative h-dvh w-dvw flex flex-col justify-center px-12 transition-all duration-500 overflow-hidden"
         onMouseEnter={() => setIsCursorVisible(true)}
         onMouseLeave={() => setIsCursorVisible(false)}
       >
@@ -29,7 +29,7 @@ export default function Home() {
           muted
           loop
           playsInline
-          className="absolute top-0 left-0 w-full h-full object-cover z-0 opacity-60"
+          className="absolute top-0 left-0 w-dvw h-dvh object-cover z-0 opacity-60"
         />
         <div className="absolute inset-0 bg-linear-to-b from-transparent to-[#060606] z-10" />
 

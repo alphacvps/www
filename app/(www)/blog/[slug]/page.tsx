@@ -98,7 +98,7 @@ export default async function PostPage({ params }: PostProps) {
   catch { return notFound(); }
 
   return (
-    <div className="min-h-screen bg-[#050505] text-[#e0e0e0] font-mono selection:bg-[#ff0000]/30 selection:text-white relative overflow-hidden pb-20">
+    <div className="min-h-dvh bg-[#050505] text-[#e0e0e0] font-mono selection:bg-[#ff0000]/30 selection:text-white relative overflow-hidden pb-20">
       <article className="relative z-10 max-w-3xl mx-auto px-6 pt-20">
         <div className="flex justify-between items-center border-b border-white/10 pb-4 mb-16 text-[10px] tracking-[0.2em] uppercase text-white/40">
           <Link href="/blog" className="hover:text-[#ff0000] transition-colors flex items-center gap-2">

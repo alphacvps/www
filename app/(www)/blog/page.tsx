@@ -40,7 +40,7 @@ export default function BlogPage() {
   const dynamicGridPosts: PostData[] = getSortedPostsData();
 
   return (
-    <div className="min-h-screen bg-[#050505] text-[#e0e0e0] font-mono selection:bg-[#ff0000]/30 selection:text-white p-6 md:p-12 relative overflow-hidden mt-20">
+    <div className="min-h-dvh bg-[#050505] text-[#e0e0e0] font-mono selection:bg-[#ff0000]/30 selection:text-white p-6 md:p-12 relative overflow-hidden mt-20">
 
       <main className="relative z-10 max-w-7xl mx-auto space-y-24">
         
