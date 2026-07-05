@@ -62,10 +62,10 @@ export const blogSuggestedItems = [
 ];
 
 export const footerItems: FooterItems[] = [
-  { label: "OUR VALUES", href: "#" },
+  { label: "PRODUCTS", href: "/products" },
   { label: "ABOUT US", href: "/about-us" },
-  { label: "OUR MISSION", href: "#" },
-  { label: "OPEN SOURCE HUB", href: "#" },
+  { label: "BLOG", href: "/blog" },
+  { label: "CONTACT", href: "mailto:alphacops@gmail.com" },
 ];
 
 export const socialLinks: SocialItem[] = [
