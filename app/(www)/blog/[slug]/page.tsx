@@ -92,45 +92,56 @@ interface PostProps {
 
 export default async function PostPage({ params }: PostProps) {
   const { slug } = await params;
+  let postData: PostData;
 
-  try {
-    const postData: PostData = getPostData(slug);
+  try { postData = getPostData(slug); }
+  catch { return notFound(); }
 
-    return (
-      <div className="min-h-screen bg-[#050505] text-[#e0e0e0] font-mono selection:bg-[#ff0000]/30 selection:text-white relative overflow-hidden pb-20">
+  return (
+    <div className="min-h-screen bg-[#050505] text-[#e0e0e0] font-mono selection:bg-[#ff0000]/30 selection:text-white relative overflow-hidden pb-20">
+      <article className="relative z-10 max-w-3xl mx-auto px-6 pt-12 md:pt-20">
+        <div className="flex justify-between items-center border-b border-white/10 pb-4 mb-16 text-[10px] tracking-[0.2em] uppercase text-white/40">
+          <Link href="/blog" className="hover:text-[#ff0000] transition-colors flex items-center gap-2">
+            &lt; Return_To_Feed
+          </Link>
+          <div>STATUS: DECRYPTED</div>
+        </div>
 
-        <article className="relative z-10 max-w-3xl mx-auto px-6 pt-12 md:pt-20">
-          
-          <div className="flex justify-between items-center border-b border-white/10 pb-4 mb-16 text-[10px] tracking-[0.2em] uppercase text-white/40">
-            <Link href="/blog" className="hover:text-[#ff0000] transition-colors flex items-center gap-2">
-              &lt; Return_To_Feed
-            </Link>
-            <div>STATUS: DECRYPTED</div>
+        <header className="mb-16 space-y-6">
+          <div className="flex items-center gap-4 text-[10px] tracking-widest text-[#ff0000]">
+            <span className="border border-[#ff0000]/20 bg-[#ff0000]/5 px-2 py-1">
+              INTEL_LOG
+            </span>
+            <span>{postData.date}</span>
           </div>
+          
+          <h1 className="text-3xl md:text-5xl font-light tracking-tight text-white/90 leading-tight">
+            {postData.title}
+          </h1>
+        </header>
 
-          <header className="mb-16 space-y-6">
-            <div className="flex items-center gap-4 text-[10px] tracking-widest text-[#ff0000]">
-              <span className="border border-[#ff0000]/20 bg-[#ff0000]/5 px-2 py-1">
-                INTEL_LOG
-              </span>
-              <span>{postData.date}</span>
+        <section className="relative">
+          <ReactMarkdown components={MarkdownComponents}>
+            {postData.content || ""}
+          </ReactMarkdown>
+        </section>
+
+        {postData.warning && (
+          <div className="mt-16 border border-[#ff0000]/20 bg-[#ff0000]/[0.03] p-5 relative">
+            <div className="text-[10px] tracking-[0.2em] uppercase text-[#ff0000] font-semibold mb-3">
+              &#x25B7; Warning
             </div>
-            
-            <h1 className="text-3xl md:text-5xl font-light tracking-tight text-white/90 leading-tight">
-              {postData.title}
-            </h1>
-          </header>
-
-          <section className="relative">
-            <ReactMarkdown components={MarkdownComponents}>
-              {postData.content || ""}
-            </ReactMarkdown>
-          </section>
-
-        </article>
-      </div>
-    );
-  } catch (error) {
-    return notFound();
-  }
+            <p className="text-xs text-white/50 font-light leading-relaxed">
+              This content is provided for educational and informational purposes only. 
+              The techniques and tools described are intended to be used exclusively 
+              within authorized environments and in compliance with applicable laws. 
+              Any misuse of this information is solely the responsibility of the reader.
+            </p>
+            <div className="absolute top-0 right-0 w-2 h-2 border-t border-r border-[#ff0000]/30" />
+            <div className="absolute bottom-0 left-0 w-2 h-2 border-b border-l border-[#ff0000]/30" />
+          </div>
+        )}
+      </article>
+    </div>
+  );
 }

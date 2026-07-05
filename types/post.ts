@@ -3,5 +3,6 @@ export interface PostData {
   title: string;
   date: string;
   excerpt: string;
+  warning?: boolean;
   content?: string;
 }
