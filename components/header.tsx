@@ -4,10 +4,10 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { DecryptLink } from "./decryptLink";
 
-import { searchPosts } from "@/lib/search"; 
+import { searchPosts, getRecentPosts } from "@/lib/search"; 
 import { HeaderProps } from "@/types/header";
 import { SearchResult } from "@/types/search";
-import { headerItems, headerSuggestedItems } from "@/config/config";
+import { headerItems } from "@/config/config";
 
 export default function Header({className}: HeaderProps) {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -15,6 +15,7 @@ export default function Header({className}: HeaderProps) {
   
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState<SearchResult[]>([]);
+  const [recentPosts, setRecentPosts] = useState<SearchResult[]>([]);
   const [isSearching, setIsSearching] = useState(false);
   
   const inputRef = useRef<HTMLInputElement>(null);
@@ -73,7 +74,7 @@ export default function Header({className}: HeaderProps) {
       window.removeEventListener("keydown", handleKeyDown);
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, []);
+  }, [closeAll]);
 
   const highlightText = (text: string, query: string) => {
     if (!query.trim()) return text;
@@ -92,31 +93,34 @@ export default function Header({className}: HeaderProps) {
     );
   };
 
+  const searchTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
   useEffect(() => {
-    if (!searchQuery.trim()) {
-      setSearchResults([]);
-      setIsSearching(false);
-      return;
-    }
-
-    setIsSearching(true);
-
-    const debounceTimer = setTimeout(async () => {
+    if (!searchQuery.trim()) return;
+    if (searchTimeoutRef.current) clearTimeout(searchTimeoutRef.current);
+    searchTimeoutRef.current = setTimeout(async () => {
+      setIsSearching(true);
       try {
         const results = await searchPosts(searchQuery); 
         setSearchResults(results);
-      } catch (error) {
-        console.error("UPLINK_ERROR: Server fetch failed", error);
+      } catch {
         setSearchResults([]); 
       } finally {
         setIsSearching(false);
+        searchTimeoutRef.current = null;
       }
     }, 300);
 
-    return () => clearTimeout(debounceTimer);
+    return () => {
+      if (searchTimeoutRef.current) clearTimeout(searchTimeoutRef.current);
+    };
   }, [searchQuery]);
 
-  const displayResults = searchQuery.trim() ? searchResults : headerSuggestedItems;
+  useEffect(() => {
+    getRecentPosts(4).then(setRecentPosts).catch(() => setRecentPosts([]));
+  }, []);
+
+  const displayResults = searchQuery.trim() ? searchResults : recentPosts;
 
   useEffect(() => {
     if (isSearchOpen && inputRef.current) {

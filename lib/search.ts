@@ -94,6 +94,15 @@ function getMatchSnippet(content: string, query: string, excerpt: string): strin
  * Server action to search through blog posts based on a user query.
  * Returns the top 5 most relevant results.
  */
+export async function getRecentPosts(limit: number = 4): Promise<SearchResult[]> {
+  const posts = getAllPosts();
+  return posts.slice(0, limit).map(({ slug, title, excerpt }) => ({
+    slug,
+    title,
+    excerpt: excerpt || "",
+  }));
+}
+
 export async function searchPosts(query: string): Promise<SearchResult[]> {
   if (!query.trim()) return [];
 
