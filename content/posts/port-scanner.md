@@ -54,6 +54,8 @@ In the TCP protocol, a port can generally be in one of three states:
 * **Closed**, when no process is listening on that port on the host.
 * **Filtered**, when the Port Scanner cannot determine its state. This generally happens because a firewall, router, or IDS/IPS system intercepts the traffic and blocks the requests before they reach the operating system.
 
+The [scan_tcp_port](https://github.com/alphacops/tcp-udp-port-scanner/blob/b9b3b0ee8d1b561e830a683d666e3e1880385f7a/src/scanner.py#L15) function returns exactly this information, distinguishing between open ports, closed ports, and cases where it is not possible to determine the port's state with certainty.
+
 ## How a scanner determines the state of a port
 
 The principle behind any Port Scanner is to send requests to a port and interpret the response.
@@ -78,6 +80,8 @@ In fact, many UDP services simply do not respond to received packets. The absenc
 
 For this reason, UDP scans are generally slower and less reliable than TCP scans.
 
+This behavior is reflected in the [scan_udp_port](https://github.com/alphacops/tcp-udp-port-scanner/blob/b9b3b0ee8d1b561e830a683d666e3e1880385f7a/src/scanner.py#L28) function, which takes into account the ambiguity inherent to the UDP protocol, where the absence of a response does not necessarily mean that the port is closed.
+
 ## Why perform a port scan
 
 Port scanning is one of the fundamental activities in cybersecurity.
@@ -92,6 +96,8 @@ From a defensive perspective, it allows you to:
 
 From an offensive perspective, on the other hand, it represents one of the first stages of the reconnaissance process. Before attempting any attack, it is necessary to understand which services are accessible and which technologies are being used by the target system. For this reason, Port Scanning is one of the most important techniques in both **Penetration Testing** and **Cyber Defence**.
 
+Once an open port has been identified, it is often useful to gather additional information about the service running behind it. In our example, this task is performed by the [banner_grabbing](https://github.com/alphacops/tcp-udp-port-scanner/blob/b9b3b0ee8d1b561e830a683d666e3e1880385f7a/src/scanner.py#L4) function, which attempts to retrieve the banner sent by the service in order to collect useful information for the service enumeration phase.
+
 ## Limitations of a Port Scanner
 
 Although it is an extremely powerful tool, a Port Scanner has several limitations. An open port does not automatically imply the presence of a vulnerability. Likewise, a closed port does not guarantee that a system is secure. Firewalls, IDS/IPS systems, proxies, load balancers, rate limiting techniques, and other protection mechanisms can alter or conceal responses, making the results incomplete or partially inaccurate.
@@ -101,3 +107,5 @@ For this reason, a port scan represents only the initial phase of a security ass
 ## Conclusion
 
 The Port Scanner is one of the most important tools in networking and cybersecurity. There is no "magic" behind how it works: everything is based on understanding network protocols, interpreting the responses of remote systems, and analyzing the behavior of network ports.
+
+Want to see these concepts in action? You can test and try our implementation of a Port Scanner on our [GitHub repository](https://github.com/alphacops/tcp-udp-port-scanner), where you'll find the complete source code used throughout this article and experiment with how it works firsthand.
