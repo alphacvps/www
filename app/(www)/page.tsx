@@ -36,15 +36,8 @@ export default function Home() {
         <Crosshair mousePos={mousePos} isVisible={isCursorVisible} />
 
         <div className="absolute bottom-10 z-20 pointer-events-none select-none max-w-7xl">
-          <div className="flex items-center gap-3 mb-4">
-            <div className="w-1.5 h-1.5 bg-[#ff0000] animate-pulse"></div>
-            <p className="text-[10px] tracking-[0.4em] uppercase font-bold opacity-60">
-              Anti-Intrusion AlphaCops
-            </p>
-          </div>
-
           <h1 className="text-[clamp(3rem,10vw,110px)] font-medium leading-[0.85] uppercase tracking-tighter">
-            Defending Tomorrow,
+            Preparing for Tomorrow,
             <br />
             <div className="flex items-center gap-6">
               <span>Together</span>

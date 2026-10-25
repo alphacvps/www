@@ -1,12 +1,11 @@
 import { SiteConfig, SocialItem } from "@/types/config";
 import packageJson from "../package.json";
 import { HeaderItems } from "../types/header";
-import { SearchResult } from "../types/search";
 import { FooterItems } from "../types/footer";
 
 export const siteConfig: SiteConfig = {
   version: packageJson.version,
-  title: "AlphaCops",
+  title: "Alphacvps",
   description: "",
   logo: "/logo.svg",
   logoDark: "/logo-white.svg",
@@ -17,27 +16,6 @@ export const headerItems: HeaderItems[] = [
   { label: "Products", href: "/products" },
   { label: "Blog", href: "/blog" },
   { label: "About us", href: "/about-us" },
-];
-
-export const headerSuggestedItems: SearchResult[] = [
-  {
-    slug: "protocols-update",
-    title: "Security Protocols Update",
-    excerpt:
-      "Critical update regarding the new AES-256 encryption standards across all regional hubs.",
-  },
-  {
-    slug: "vulnerability-assessment",
-    title: "System Vulnerability Assessment",
-    excerpt:
-      "Weekly scan results and patched exploits in the mainframe network.",
-  },
-  {
-    slug: "operation-shadowfall",
-    title: "Operation Shadowfall Intel Log",
-    excerpt:
-      "Declassified timeline of events during the final phase of Operation Shadowfall.",
-  },
 ];
 
 export const blogSuggestedItems = [
@@ -68,21 +46,28 @@ export const footerItems: FooterItems[] = [
   { label: "CONTACT", href: "mailto:alphacops@gmail.com" },
 ];
 
+export const SOCIAL_URLS = {
+  GitHub: "https://github.com/alphacvps",
+  Instagram: "https://instagram.com/alphacvps",
+  Telegram: "https://t.me/alphacvps",
+  YouTube: "https://youtube.com/@alphacvps",
+} as const;
+
 export const socialLinks: SocialItem[] = [
   {
     title: "GitHub",
-    href: "https://github.com/alphacops",
+    href: SOCIAL_URLS.GitHub,
   },
   {
     title: "Instagram",
-    href: "https://instagram.com/alphacvps",
+    href: SOCIAL_URLS.Instagram,
   },
   {
     title: "Telegram",
-    href: "https://t.me/alphacvps",
+    href: SOCIAL_URLS.Telegram,
   },
   {
     title: "YouTube",
-    href: "https://youtube.com/@alphacops",
+    href: SOCIAL_URLS.YouTube,
   },
 ];

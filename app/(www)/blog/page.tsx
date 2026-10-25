@@ -9,32 +9,7 @@ const CONFIG = {
   sysName: "ALPHACOPS // INTEL_DATABASE",
 };
 
-const MANUAL_FEATURED_POSTS: BlogPost[] = [
-  {
-    id: "operazione-shadowfall",
-    title: "OPERATION: SHADOWFALL",
-    excerpt: "Dati di ricognizione iniziali rilevati nel Settore 7. Si consiglia massima discrezione.",
-    date: "2026-06-04",
-    category: "MISSION_BRIEF",
-    classification: "TOP_SECRET"
-  },
-  {
-    id: "breccia-di-sistema-rilevata",
-    title: "BREACH_DETECTED // NODE_04",
-    excerpt: "Analisi delle vulnerabilità riscontrate nel nodo di sicurezza perimetrale. Patch in corso.",
-    date: "2026-06-02",
-    category: "SYS_ALERT",
-    classification: "CRITICAL"
-  },
-  {
-    id: "aggiornamento-protocolli",
-    title: "AGGIORNAMENTO PROTOCOLLI ALPHA",
-    excerpt: "Nuove direttive operative per le unità di pattuglia nel distretto neon.",
-    date: "2026-05-28",
-    category: "DIRECTIVE",
-    classification: "RESTRICTED"
-  }
-];
+const MANUAL_FEATURED_POSTS: BlogPost[] = [];
 
 export default function BlogPage() {
   const dynamicGridPosts: PostData[] = getSortedPostsData();
@@ -43,7 +18,7 @@ export default function BlogPage() {
     <div className="min-h-dvh bg-[#050505] text-[#e0e0e0] font-mono selection:bg-[#ff0000]/30 selection:text-white p-6 md:p-12 relative overflow-hidden mt-20">
 
       <main className="relative z-10 max-w-7xl mx-auto space-y-24">
-        
+
         {MANUAL_FEATURED_POSTS.length > 0 && (
           <PriorityFeed posts={MANUAL_FEATURED_POSTS} intervalMs={CONFIG.carouselInterval} />
         )}
@@ -56,8 +31,8 @@ export default function BlogPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {dynamicGridPosts.map((post) => (
-                <Link 
-                  href={`/blog/${post.id}`} 
+                <Link
+                  href={`/blog/${post.id}`}
                   key={post.id}
                   className="group relative border border-white/5 bg-black/40 p-6 hover:bg-white/3 hover:border-white/20 transition-all duration-500 flex flex-col justify-between h-full min-h-62.5"
                 >

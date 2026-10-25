@@ -1,6 +1,7 @@
 "use client";
 
 import Button from "@/components/button";
+import { SOCIAL_URLS } from "@/config/config";
 import { useState } from "react";
 
 interface DownloadUrls {
@@ -18,16 +19,7 @@ interface Product {
   downloads?: DownloadUrls;
 }
 
-const PRODUCTS_DATA: Product[] = [
-  {
-    name: "WCCT",
-    status: "ACTIVE",
-    description:
-      "Sviluppato per gestire pipeline di dati critiche in ambienti isolati. Ottimizza i flussi di lavoro complessi riducendo al minimo l'allocazione di memoria e garantendo tempi di risposta inferiori ai 2 millisecondi.",
-    techStack: ["Go"],
-    githubUrl: "https://github.com/alphacops/wcct",
-  },
-];
+const PRODUCTS_DATA: Product[] = [];
 
 export default function ProductsPage() {
   const [openDropdownId, setOpenDropdownId] = useState<number | null>(null);
@@ -45,7 +37,7 @@ export default function ProductsPage() {
           </h1>
 
           <Button
-            href="https://github.com/alphacops"
+            href={SOCIAL_URLS.GitHub}
             target="_blank"
             variant="secondary"
             leftIcon={

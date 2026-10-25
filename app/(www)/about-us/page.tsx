@@ -1,97 +1,98 @@
-"use client";
-
-import React from "react";
-
-const AboutTactical: React.FC = () => {
+export default function About() {
   return (
     <main className="min-h-dvh bg-[#060606] font-mono selection:bg-red-600 selection:text-white p-6 md:p-12 lg:p-20">
       <div className="max-w-4xl mx-auto">
         <header className="mb-24">
           <h1 className="text-5xl md:text-7xl font-black uppercase tracking-tighter leading-none mb-4">
-            MINIMALISM <br />
-            <span className="opacity-40">IS SECURITY.</span>
+            PREPARARSI <br />
+            <span className="opacity-40">PER RESISTERE.</span>
           </h1>
         </header>
 
         <section className="space-y-16 text-sm md:text-base leading-relaxed max-w-2xl">
           <div className="space-y-6">
             <h2 className="text-white font-bold uppercase tracking-widest text-xs border-b border-white/10 pb-2 w-fit">
-              01. Security Through Simplicity
+              01. La preparazione è sopravvivenza
             </h2>
 
             <p className="opacity-80">
-              We are a community focused on developing cyber security solutions
-              built around clarity, precision, and operational control. Our
-              philosophy rejects unnecessary complexity in favor of systems that
-              are understandable, auditable, and maintainable over time. In a
-              digital landscape dominated by bloated software stacks and opaque
-              infrastructures, we deliberately choose restraint.
+              Siamo una community dedicata alla preparazione, all'autonomia
+              e alla sopravvivenza in situazioni di emergenza. Il nostro
+              obiettivo è sviluppare conoscenze, competenze e mentalità
+              necessarie per affrontare l'imprevisto con lucidità e
+              consapevolezza. Dalle catastrofi naturali ai blackout
+              prolungati, fino alle interruzioni dei servizi essenziali,
+              crediamo che prepararsi in anticipo sia fondamentale per
+              affrontare una crisi senza essere completamente impreparati.
             </p>
 
             <p className="opacity-80">
-              Every additional dependency, abstraction layer, or automated
-              feature increases the attack surface. Complexity creates blind
-              spots. Blind spots become vulnerabilities. For this reason, we
-              design software where every component serves a clear and verifiable
-              purpose. Minimalism is not aesthetics; it is a defensive strategy.
+              La sopravvivenza non comincia quando si verifica una
+              catastrofe. Comincia prima, attraverso la pianificazione,
+              l'addestramento e la capacità di prevedere i possibili
+              scenari. Acqua, cibo, riparo, primo soccorso, comunicazioni
+              e consapevolezza dell'ambiente sono elementi fondamentali.
+              Prepararsi non significa vivere nella paura, ma essere
+              pronti ad affrontare ciò che potrebbe accadere.
             </p>
           </div>
 
           <div className="space-y-6">
             <h2 className="text-white font-bold uppercase tracking-widest text-xs border-b border-white/10 pb-2 w-fit">
-              02. Radical Transparency
+              02. La conoscenza è una risorsa
             </h2>
 
             <p className="opacity-80">
-              We believe real security can only exist when systems can be fully
-              inspected and understood. Hidden logic and inaccessible code do
-              not create trust — they merely outsource trust to third parties.
-              Our approach prioritizes transparency, deterministic behavior, and
-              direct control over the execution environment.
+              Le informazioni hanno valore quando possono essere comprese,
+              verificate e applicate anche sotto pressione. Promuoviamo
+              conoscenze pratiche, pensiero critico e competenze utili
+              quando le infrastrutture moderne e i servizi quotidiani
+              smettono di funzionare. Diamo priorità ai metodi affidabili
+              rispetto alle supposizioni, alle capacità reali rispetto
+              alle apparenze e all'apprendimento continuo rispetto alla
+              falsa sicurezza.
             </p>
 
             <p className="opacity-80">
-              The tools we create are intended for technical users,
-              professionals, researchers, and operators who require reliability
-              without compromise. Instead of simplifying software by concealing
-              its internals, we expose architecture and behavior as clearly as
-              possible, allowing users to validate, adapt, and extend systems
-              according to their operational needs.
+              La nostra community riunisce principianti, appassionati
+              di preparazione alle emergenze, esperti di attività outdoor
+              e persone che desiderano diventare più autonome. Condividiamo
+              esperienze, analizziamo attrezzature, approfondiamo tecniche
+              di sopravvivenza e impariamo a prendere decisioni consapevoli
+              anche con risorse limitate. Nessuno conosce ogni cosa.
+              Tutti possono contribuire.
             </p>
           </div>
 
           <div className="space-y-6">
             <h2 className="text-white font-bold uppercase tracking-widest text-xs border-b border-white/10 pb-2 w-fit">
-              03. Engineering Discipline
+              03. La forza della comunità
             </h2>
 
             <p className="opacity-80">
-              Building secure minimalist software requires more discipline than
-              adding endless features. Removing the unnecessary is a continuous
-              engineering process that demands precision, consistency, and deep
-              understanding of system behavior. We optimize for robustness,
-              predictability, and long-term maintainability instead of market
-              trends or feature inflation.
+              L'autonomia personale è importante, ma l'isolamento non è
+              una strategia. Durante un'emergenza grave, la collaborazione,
+              la comunicazione e la fiducia reciproca possono essere
+              preziose quanto qualsiasi attrezzatura. Le comunità preparate
+              condividono risorse, scambiano conoscenze, coordinano le
+              proprie capacità e aiutano chi si trova in difficoltà.
+              La preparazione individuale è un vantaggio. La preparazione
+              collettiva può fare la differenza.
             </p>
 
             <p className="opacity-80">
-              Our mission is to demonstrate that essential architecture is not a
-              limitation but the foundation of sustainable security. Strong
-              systems are not those with the most functionality, but those that
-              remain comprehensible under pressure, auditable under scrutiny, and
-              resilient under attack.
-            </p>
-          </div>
-
-          <div className="pt-12 border-t border-white/5">
-            <p className="text-xl font-bold uppercase italic tracking-tight text-white">
-              "Reduce complexity. Reduce attack surface. Preserve control."
+              Vogliamo costruire una cultura basata sulla responsabilità,
+              sull'adattabilità e sulla competenza pratica. Incoraggiamo
+              ogni membro ad allenarsi, mettere alla prova le proprie
+              conoscenze, verificare la propria attrezzatura e migliorare
+              i propri piani prima che diventino necessari. Perché la
+              resilienza non si misura da quanto possiedi, ma da ciò che
+              sai fare quando le circostanze cambiano e le risorse
+              cominciano a scarseggiare.
             </p>
           </div>
         </section>
       </div>
     </main>
   );
-};
-
-export default AboutTactical;
+}
